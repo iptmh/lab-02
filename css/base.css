@@ -1,0 +1,12 @@
+body {
+    background-color: lightyellow;
+  }
+
+  main>div{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    display: inline-block;
+}
+  
+
