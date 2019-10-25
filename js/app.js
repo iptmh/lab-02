@@ -10,6 +10,7 @@ function Animal(animal) {
 
 Animal.allAnimals = [];
 
+// Animal.dropdown = [];
 Animal.prototype.render = function () {
   $('main').append('<div class="clone"></div>');
   let animalClone = $('div[class="clone"]');
