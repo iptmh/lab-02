@@ -10,16 +10,20 @@ function Animal(animal) {
 
 Animal.allAnimals = [];
 
+// Animal.dropdown = [];
 Animal.prototype.render = function () {
   $('main').append('<div class="clone"></div>');
   let animalClone = $('div[class="clone"]');
 
-  $('select').append('<option class="keyword-clone"></option>');
-  let filterClone = $('option[class="keyword-clone"]');
+  // if (!Animal.dropdown.includes(this.keyword)) {
+  //   Animal.dropdown.push(this.keyword);
+  // }
 
-  filterClone.text(this.keyword);
-  filterClone.removeClass('keyword-clone');
-  filterClone.attr('class', this.keyword);
+  // let filterClone = $('option[class="keyword-clone"]');
+
+  // filterClone.text(this.keyword);
+  // filterClone.removeClass('keyword-clone');
+  // filterClone.attr('class', this.keyword);
 
   let animalHtml = $('#photo-template').html();
 
@@ -40,8 +44,13 @@ Animal.readJson = () => {
         Animal.allAnimals.push(new Animal(item));
       });
     })
-    .then(Animal.loadAnimals);
-}
+    .then(Animal.loadAnimals)
+  // .then(console.log(Animal.dropdown[1]));
+  // .then(Animal.dropdown.forEach(function (element) {
+  //   console.log('dropdown load', element);
+  //   $('select').append(`<option class="keyword">${element}</option>`);
+};
+
 Animal.loadAnimals = () => {
   Animal.allAnimals.forEach(animal => animal.render());
 };
