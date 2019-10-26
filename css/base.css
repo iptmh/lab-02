@@ -6,7 +6,7 @@ body {
     text-align: center;
     margin: auto;
     padding: 20px;
-    display: inline-block;
+    float: left;
 }
   
 
