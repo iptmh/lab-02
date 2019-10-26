@@ -10,16 +10,10 @@ function Animal(animal) {
 
 Animal.allAnimals = [];
 
+// Animal.dropdown = [];
 Animal.prototype.render = function () {
   $('main').append('<div class="clone"></div>');
   let animalClone = $('div[class="clone"]');
-
-  $('select').append('<option class="keyword-clone"></option>');
-  let filterClone = $('option[class="keyword-clone"]');
-
-  filterClone.text(this.keyword);
-  filterClone.removeClass('keyword-clone');
-  filterClone.attr('class', this.keyword);
 
   let animalHtml = $('#photo-template').html();
 
@@ -40,8 +34,9 @@ Animal.readJson = () => {
         Animal.allAnimals.push(new Animal(item));
       });
     })
-    .then(Animal.loadAnimals);
-}
+    .then(Animal.loadAnimals)
+};
+
 Animal.loadAnimals = () => {
   Animal.allAnimals.forEach(animal => animal.render());
 };
